@@ -1,0 +1,17 @@
+[Unit]
+Description=Scuttlebot on %I network
+After=network.target
+
+[Service]
+User=regular
+Group=regular
+Environment="ssb_appname=%i"
+Environment="nodebin=/usr/bin"
+ExecStart=/usr/bin/bash -xc '${nodebin}/node ${nodebin}/sbot server'
+
+# Restart every >2 seconds to avoid StartLimitInterval failure
+RestartSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
