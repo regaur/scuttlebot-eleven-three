@@ -4,3 +4,8 @@ src/
 *.pkg.tar.xz.sig
 
 
+pkg/
+src/
+*.pkg.tar.xz
+*.pkg.tar.xz.sig
+scuttlebot-eleven-three/
